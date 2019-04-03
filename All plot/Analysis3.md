@@ -1375,7 +1375,7 @@ bov_pop <- genind2genpop(genindB)
 set.seed(20150428)
 pop_tree <- aboot(bov_pop, sample = 1000, cutoff = 50)
 ```
-![Plot](https://github.com/evelyn-takyi/Sardinella-project/blob/master/All%20plot/noGui1.png)
+![Plot](https://github.com/evelyn-takyi/Sardinella-project/blob/master/All%20plot/AUTNOGT.png)
 
 #### PCA plot was generated using the package  genlight in R
 ```{r}
@@ -1397,17 +1397,16 @@ p <- p + geom_vline(xintercept = 0)
 p <- p + theme_bw()
 p
 ```
-![plot2](https://github.com/evelyn-takyi/Sardinella-project/blob/master/All%20plot/noGUI.png)  
-
-##### Get percent contribution of each PC for representing variation.
+![plot2](https://github.com/evelyn-takyi/Sardinella-project/blob/master/All%20plot/AUTNOGP.png)  
+##### The percent contribution of each PC for representing variation.
 ```{r}
 eig.perc <- 100*rubi.pca$eig/sum(pca$eig)
 head(eig.perc)
-PC1 0.037
-PC2 0.0434
-PC3 0.0216
-PC4 0.2018
-PC5 0.0174
+PC1 0.03711317
+PC2 0.03381282
+PC3 0.02162289
+PC4 0.01827759
+PC5 0.01741653
 ```
 #### Discriminant analysis of principal components (DAPC) was conducted in R using  the package Adegenet 1.3.0 to generate the number of clusters or groups present in our population
 
