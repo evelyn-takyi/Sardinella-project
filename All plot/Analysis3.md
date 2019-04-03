@@ -1089,7 +1089,7 @@ bov_pop <- genind2genpop(genindB)
 set.seed(20150428)
 pop_tree <- aboot(bov_pop, sample = 1000, cutoff = 50)
 ```
-![Plot](https://github.com/evelyn-takyi/Sardinella-project/blob/master/All%20plot/jessy3.png)
+![Plot](https://github.com/evelyn-takyi/Sardinella-project/blob/master/All%20plot/Tree.png)
 
 
 #### PCA plot was generated using the package  genlight in R
@@ -1138,7 +1138,6 @@ scatter(dapc1) # plot of the group
 ```
 ###### This outputs the DAPC plot and the BIC plot showing the number of groups.
 ![Dapc_BIC](https://github.com/evelyn-takyi/Sardinella-project/blob/master/dapc_BIC.png)
-![Dapc_plo](https://github.com/evelyn-takyi/Sardinella-project/blob/master/All%20plot/jessy%20DAPC.png)
 
 #### structure-like plot
 ##### DAPC function generates the posterior probability of each sample to a group and using that information to generate a structure plot
@@ -1155,20 +1154,7 @@ p <- p + geom_bar(stat='identity')
 p <- p + facet_grid(~Original_Pop, scales = "free")
 p <- p + theme(axis.text.x = element_text(angle = 90, hjust = 1, size = 5))
 ```
-##### To represent the plot in a piechart format,
-###### First the  mean is calculated Posterior_membership_probability per population
-```{r}
-grouped_data <- group_by(dapcB.results, Original_Pop, Assigned_Pop)
-data_means <- summarise(grouped_data, mean=mean(Posterior_membership_probability))
-```
-###### Plot means for each original pop colored by assigned pop
-```{r}
-pieB <- ggplot(data_means, aes(x=Original_Pop,y=mean, fill=Assigned_Pop))
-pieB <- pieB + geom_bar(stat='identity') + cp
-pieB <- pieB + facet_grid(~Original_Pop, scales = "free") + theme(axis.text=element_blank(), axis.ticks=element_blank(), panel.grid = element_blank(), strip.background = element_blank())
-pieB
-```
-![Plot3](https://github.com/evelyn-takyi/Sardinella-project/blob/master/All%20plot/jessy5.png)
+![Plot3](https://github.com/evelyn-takyi/Sardinella-project/blob/master/All%20plot/AUTSTR.png)
 
 ### Analysis without Guinea populations
 ### SNP Filtering
